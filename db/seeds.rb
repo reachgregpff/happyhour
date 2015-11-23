@@ -53,6 +53,7 @@ Bar.create(name: 'Amber Lounge', address: '388 Lonsdale Street, Melbourne', imag
 Bar.create(name: 'European Bier Café', address: '120 Exhibition Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.812916, longitude: 144.971255, offer: 'What: Half price tap beer, When: Mondays, Time: after 5pm, What: Two beers for one, When: Thursdays, Time: after 6pm', website: 'http://www.europeanbiercafe', phone: '(03) 9663 1222',user_id: 3);
 
 
+
 #Cocktail Records 0 to 100
 
 Cocktail.create(cocktail_id: "Blood-_-Sand-Cocktail-1376432", name: "Blood & Sand Cocktail", image_url: "https://lh3.googleusercontent.com/93bqB-_g4hJUK6vTnWUzadHvfe1BWub2xGByaJ-44MgzImCy3fepaHEhMjioErOI5Vu3xWeYmKFPF0xt10wV0A=s90-c", time: 300, ingredients: "scotch, liqueur, sweet vermouth, fresh orange juice, orange segments, cocktail cherries")

@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   #clicking on a star on a dish image
   get '/like_cocktail'  => 'pages#like_cocktail'
 
+  #display bars
+  resources :bars
+  get '/list' => 'bars#list'
+
 
   #API HERE 
   namespace :api do
