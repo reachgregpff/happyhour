@@ -1,0 +1,57 @@
+
+<%  count = 0 %>
+
+<div class="container">
+    <div class="row">
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Total cocktails to choose from: <%=@cocktails.count%></h2>
+        <h4>Cocktails 1 to 1000...</h4>
+    </div>
+    <div class="row">
+      <center>
+        <div class="col-md-6">
+        <img href="https://drinkwise.org.au/" src="/drinkwise.png" alt="drink wise"></img>
+      </center>
+    </div>
+  </div>
+</div>
+
+<% @cocktails.each do |cocktail|  %>
+
+  <!-- <img style-"width: 100%;" src="http://7-themes.com/data_images/out/30/6871862-beach-scenery.jpg" alt=""> -->
+
+
+    <div style="height:300px;background-color: LightGray; border: 2px solid white; border-radius: 10%;" class="col-md-2">
+      <h6><a href=""><%=cocktail.name%></a></h6>
+
+      <% if cocktail.image_url != "Image Not Available" %>
+        <img src=<%=cocktail.image_url%> alt=""></img>
+      <% else %>
+        <img style="width:98%;" src="/Cocktailani.gif" alt="Cocktail"></img>
+      <% end %>
+
+      <p><%=cocktail.ingredients%></p>
+    </div>
+
+
+<% 
+
+  count = count + 1
+  if count == 1000
+    break
+  end
+  
+end %>
+
+  </div>
+</div>
+
+
+    <script src = "jquery-1.11.3.min.js" ></script>
+    <script src = "bootstrap/js/bootstrap.js" ></script>
+
+
+
