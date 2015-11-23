@@ -17,20 +17,40 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create(name: 'admin', email: 'admin@admin.com', password: 'password', address:'45 William St', access_level: 2);      
+User.create(name: 'gitlord', email: 'git@lord.com', password: 'lordgit', address:'46 William St', access_level: 3);
+User.create(name: 'dt', email: 'd@t.com', password: 'cakepudding', address:'30 William St', access_level: 1);     
+
+Drinkfave.create(user_id: 1, cocktail_id: 1);
+Drinkfave.create(user_id: 2, cocktail_id: 1);
+Drinkfave.create(user_id: 3, cocktail_id: 1);
+Drinkfave.create(user_id: 1, cocktail_id: 2);
+Drinkfave.create(user_id: 2, cocktail_id: 3);
+Drinkfave.create(user_id: 3, cocktail_id: 3);
+
+Barfave.create(user_id: 1, bar_id: 1);
+Barfave.create(user_id: 2, bar_id: 1);
+Barfave.create(user_id: 3, bar_id: 1);
+Barfave.create(user_id: 1, bar_id: 2);
+Barfave.create(user_id: 2, bar_id: 3);
+Barfave.create(user_id: 3, bar_id: 3);
+
+
+
 #Bar records
-Bar.create(name: 'Mr Mason', address: 'Shop 10, 530 Collins Street, Melbourne', image_url: 'assets/images/champagne.jpg', latitude: -37.818132, longitude: 144.956973, offer: 'What: $5 pints of beer, house wine & basic spirits, When: Monday - Thursday, Time: 5pm – 7pm', website: 'http://www.mrmason.com.au', phone: '(03) 9614 4500');
-Bar.create(name: 'Campari House', address: '23-25 Hardware Lane, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.814070, longitude: 144.961467 offer: 'What: $10 cocktails, When: Monday - Tuesday, Time: 4pm – 7pm', website: 'http://www.camparihouse.com.au', phone: '(03) 9600 1574');
-Bar.create(name: 'DuNord', address: '367 Lt Bourke Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.813576, longitude: 144.961870, offer: 'What: $12 market cocktail & $6.50 mystery beer, When: Monday - Saturday, Time: 4pm – 10pm', website: 'http://dunord.com.au', phone: '(03) 9642 0052');
-Bar.create(name: 'Ferdydurke', address: '31 Tattersalls Lane, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.811542, longitude: 144.965408, offer: 'What: $5.50 pots and $16 jugs of Carlton, When: All week, Time: 12pm – 5pm', website: 'http://ferdydurke.com.au', phone: '(03) 9639 3750');
-Bar.create(name: 'Whisky & Alement', address: '270 Russell Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.809815, longitude: 144.966585, offer: 'What: $10 Espresso Martinis, When: Thursday, Time: From 5pm, What: $6 selected bottled beers, liquers & spirits, $5 wines, $6 schooners, When: All week, Time: 5pm – 7pm, 8pm – 10pm', website: 'http://www.whiskyandale.com.au', phone: '(03) 9654 1284');
-Bar.create(name: 'Fathers Office', address: '249 Lt Lonsdale Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.810616, longitude: 144.964810, offer: 'What: $10 boiler makers (shot of single malt & matching beer), When: Tuesday, Wednesday and Thursday nights', website: 'http://fathersoffice.com.au', phone: '(03) 9825 8999');
-Bar.create(name: 'The Bank on Collins', address: '394 Collins Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.816963, longitude: 144.961434, offer: 'What: Two for one cocktails, When: 5-7pm every night', website: 'http://thebankoncollins.com.au', phone: '(03) 9825 8990)');
-Bar.create(name: 'Bar Vue', address: '430 Lt Collins Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.816171, longitude: 144.960254, offer: 'What: Half price tap beer & house wines, When: Monday - Friday, Time: 5pm – 6:30pm', website: 'http://www.vuedemonde.com.au/bar_vue', phone: '(03) 9691 3838');
-Bar.create(name: 'Charlies Bar', address: 'Basement 71 Hardware Lane, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.813088, longitude: 144.961008, offer: 'What: two-for-one cocktails (saving of $17, both cocktails must be of the same variety), When: weekdays, Time: 5pm to 8pm', website: 'http://www.charliesbar.com.au', phone: '(03) 9600 1454');
-Bar.create(name: 'Elephant and Wheelbarrow', address: '94-96 Bourke Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.812004, longitude: 144.970330, offer: 'What: pint of Heineken or cider (main bar has several ciders on tap), or a basic spirit for $6, When: Fridays, Time: between 5pm and 7pm', website: 'http://bourkest.elephantandwheelbarrow.com.au', phone: '(03) 9639 8444');
-Bar.create(name: 'Blue Moon Bar', address: '380 Russell Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.807497, longitude: 144.965912, offer: 'What: 50% off drinks, When: Mondays and Thursdays, Time: all night', website: 'http://www.facebook.com/BlueMoonBarMelbourne', phone: '(03) 9639 5875');
-Bar.create(name: 'Amber Lounge', address: '388 Lonsdale Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.812513, longitude: 144.960919, offer: 'What: $3 wine (including house sparkling), two-for-one cocktails, and $5 spirits and Coronas, When: Fridays, Time: 5.30pm – 8.30pm', website: 'http://www.amberlounge.net.au', phone: '(03) 9639 5875');
-Bar.create(name: 'European Bier Café', address: '120 Exhibition Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.812916, longitude: 144.971255, offer: 'What: Half price tap beer, When: Mondays, Time: after 5pm, What: Two beers for one, When: Thursdays, Time: after 6pm', website: 'http://www.europeanbiercafe', phone: '(03) 9663 1222');
+Bar.create(name: 'Mr Mason', address: 'Shop 10, 530 Collins Street, Melbourne', image_url: 'assets/images/champagne.jpg', latitude: -37.818132, longitude: 144.956973, offer: 'What: $5 pints of beer, house wine & basic spirits, When: Monday - Thursday, Time: 5pm – 7pm', website: 'http://www.mrmason.com.au', phone: '(03) 9614 4500',user_id: 1);
+Bar.create(name: 'Campari House', address: '23-25 Hardware Lane, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.814070, longitude: 144.961467, offer: 'What: $10 cocktails, When: Monday - Tuesday, Time: 4pm – 7pm', website: 'http://www.camparihouse.com.au', phone: '(03) 9600 1574',user_id: 3);
+Bar.create(name: 'DuNord', address: '367 Lt Bourke Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.813576, longitude: 144.961870, offer: 'What: $12 market cocktail & $6.50 mystery beer, When: Monday - Saturday, Time: 4pm – 10pm', website: 'http://dunord.com.au', phone: '(03) 9642 0052',user_id: 3);
+Bar.create(name: 'Ferdydurke', address: '31 Tattersalls Lane, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.811542, longitude: 144.965408, offer: 'What: $5.50 pots and $16 jugs of Carlton, When: All week, Time: 12pm – 5pm', website: 'http://ferdydurke.com.au', phone: '(03) 9639 3750',user_id: 1);
+Bar.create(name: 'Whisky & Alement', address: '270 Russell Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.809815, longitude: 144.966585, offer: 'What: $10 Espresso Martinis, When: Thursday, Time: From 5pm, What: $6 selected bottled beers, liquers & spirits, $5 wines, $6 schooners, When: All week, Time: 5pm – 7pm, 8pm – 10pm', website: 'http://www.whiskyandale.com.au', phone: '(03) 9654 1284',user_id: 3);
+Bar.create(name: 'Fathers Office', address: '249 Lt Lonsdale Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.810616, longitude: 144.964810, offer: 'What: $10 boiler makers (shot of single malt & matching beer), When: Tuesday, Wednesday and Thursday nights', website: 'http://fathersoffice.com.au', phone: '(03) 9825 8999',user_id: 1);
+Bar.create(name: 'The Bank on Collins', address: '394 Collins Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.816963, longitude: 144.961434, offer: 'What: Two for one cocktails, When: 5-7pm every night', website: 'http://thebankoncollins.com.au', phone: '(03) 9825 8990)',user_id: 1);
+Bar.create(name: 'Bar Vue', address: '430 Lt Collins Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.816171, longitude: 144.960254, offer: 'What: Half price tap beer & house wines, When: Monday - Friday, Time: 5pm – 6:30pm', website: 'http://www.vuedemonde.com.au/bar_vue', phone: '(03) 9691 3838',user_id: 3);
+Bar.create(name: 'Charlies Bar', address: 'Basement 71 Hardware Lane, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.813088, longitude: 144.961008, offer: 'What: two-for-one cocktails (saving of $17, both cocktails must be of the same variety), When: weekdays, Time: 5pm to 8pm', website: 'http://www.charliesbar.com.au', phone: '(03) 9600 1454',user_id: 3);
+Bar.create(name: 'Elephant and Wheelbarrow', address: '94-96 Bourke Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.812004, longitude: 144.970330, offer: 'What: pint of Heineken or cider (main bar has several ciders on tap), or a basic spirit for $6, When: Fridays, Time: between 5pm and 7pm', website: 'http://bourkest.elephantandwheelbarrow.com.au', phone: '(03) 9639 8444',user_id: 3);
+Bar.create(name: 'Blue Moon Bar', address: '380 Russell Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.807497, longitude: 144.965912, offer: 'What: 50% off drinks, When: Mondays and Thursdays, Time: all night', website: 'http://www.facebook.com/BlueMoonBarMelbourne', phone: '(03) 9639 5875',user_id: 1);
+Bar.create(name: 'Amber Lounge', address: '388 Lonsdale Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.812513, longitude: 144.960919, offer: 'What: $3 wine (including house sparkling), two-for-one cocktails, and $5 spirits and Coronas, When: Fridays, Time: 5.30pm – 8.30pm', website: 'http://www.amberlounge.net.au', phone: '(03) 9639 5875',user_id: 1);
+Bar.create(name: 'European Bier Café', address: '120 Exhibition Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.812916, longitude: 144.971255, offer: 'What: Half price tap beer, When: Mondays, Time: after 5pm, What: Two beers for one, When: Thursdays, Time: after 6pm', website: 'http://www.europeanbiercafe', phone: '(03) 9663 1222',user_id: 3);
 
 
 #Cocktail Records 0 to 100
