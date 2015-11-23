@@ -18,7 +18,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #Bar records
-Bar.create(name: 'Mr Mason', address: 'Shop 10, 530 Collins Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.818132, longitude: 144.956973, offer: 'What: $5 pints of beer, house wine & basic spirits, When: Monday - Thursday, Time: 5pm – 7pm', website: 'http://www.mrmason.com.au', phone: '(03) 9614 4500');
+Bar.create(name: 'Mr Mason', address: 'Shop 10, 530 Collins Street, Melbourne', image_url: 'assets/images/champagne.jpg', latitude: -37.818132, longitude: 144.956973, offer: 'What: $5 pints of beer, house wine & basic spirits, When: Monday - Thursday, Time: 5pm – 7pm', website: 'http://www.mrmason.com.au', phone: '(03) 9614 4500');
 Bar.create(name: 'Campari House', address: '23-25 Hardware Lane, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.814070, longitude: 144.961467 offer: 'What: $10 cocktails, When: Monday - Tuesday, Time: 4pm – 7pm', website: 'http://www.camparihouse.com.au', phone: '(03) 9600 1574');
 Bar.create(name: 'DuNord', address: '367 Lt Bourke Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.813576, longitude: 144.961870, offer: 'What: $12 market cocktail & $6.50 mystery beer, When: Monday - Saturday, Time: 4pm – 10pm', website: 'http://dunord.com.au', phone: '(03) 9642 0052');
 Bar.create(name: 'Ferdydurke', address: '31 Tattersalls Lane, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.811542, longitude: 144.965408, offer: 'What: $5.50 pots and $16 jugs of Carlton, When: All week, Time: 12pm – 5pm', website: 'http://ferdydurke.com.au', phone: '(03) 9639 3750');
