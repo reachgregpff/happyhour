@@ -49,7 +49,7 @@ function initMap() {
   console.log("Input location: " + location);
   map = new google.maps.Map($('.map')[0], {
     center: {lat: -34.397, lng: 150.644},
-    zoom: 6
+    zoom: 15
   });
   var infoWindow = new google.maps.InfoWindow({map: map});
 
