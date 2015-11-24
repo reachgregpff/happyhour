@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   #clicking on a star on a dish image
   get '/like_cocktail'  => 'pages#like_cocktail'
 
+  #clicking on a coktail in a cocktail list
+  get '/cocktails/:cocktail_id'    =>   'cocktails#show'
+
   #display bars
   resources :bars
 
