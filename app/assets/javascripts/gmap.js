@@ -28,14 +28,15 @@ function initMap() {
         var marker = new google.maps.Marker ({
           position: {lat: bar.latitude, lng: bar.longitude},
           map: map,
-          title: bar.name
+          title: bar.name,
+          // icon: "/assets/blueMarker.png"
         });
       });
     });
   };
 
 
-  // Check location
+  // Check loction
   console.log("Input location: " + location);
   map = new google.maps.Map($('.map')[0], {
     center: {lat: -34.397, lng: 150.644},
