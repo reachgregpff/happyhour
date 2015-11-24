@@ -52,10 +52,10 @@ Bar.create(name: 'Blue Moon Bar', address: '380 Russell Street, Melbourne', imag
 Bar.create(name: 'Amber Lounge', address: '388 Lonsdale Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.812513, longitude: 144.960919, offer: 'What: $3 wine (including house sparkling), two-for-one cocktails, and $5 spirits and Coronas, When: Fridays, Time: 5.30pm – 8.30pm', website: 'http://www.amberlounge.net.au', phone: '(03) 9639 5875',user_id: 1);
 Bar.create(name: 'European Bier Café', address: '120 Exhibition Street, Melbourne', image_url: '/images/champagne.jpg', latitude: -37.812916, longitude: 144.971255, offer: 'What: Half price tap beer, When: Mondays, Time: after 5pm, What: Two beers for one, When: Thursdays, Time: after 6pm', website: 'http://www.europeanbiercafe', phone: '(03) 9663 1222',user_id: 3);
 
-
+#Clear Cocktail Table
+Cocktail.delete_all
 
 #Cocktail Records 0 to 100
-
 Cocktail.create(cocktail_id: "Blood-_-Sand-Cocktail-1376432", name: "Blood & Sand Cocktail", image_url: "https://lh3.googleusercontent.com/93bqB-_g4hJUK6vTnWUzadHvfe1BWub2xGByaJ-44MgzImCy3fepaHEhMjioErOI5Vu3xWeYmKFPF0xt10wV0A=s90-c", time: 300, ingredients: "scotch, liqueur, sweet vermouth, fresh orange juice, orange segments, cocktail cherries")
 Cocktail.create(cocktail_id: "The-Aviation-Cocktail-1370423", name: "The Aviation Cocktail", image_url: "https://lh3.googleusercontent.com/Gx2ph7XhPQ0GS-3mfY8sVGMlg-7hSxy5-L0fRchOlOndOcySfTuvAcH9vMzy4I59bw7c4z3ufR2HvKGeeDSg=s90-c", time: 600, ingredients: "gin, maraschino liqueur, crème de violette, lemon juice")
 Cocktail.create(cocktail_id: "Orange-Pomegranate-Gin-Cocktail-1380652", name: "Orange Pomegranate Gin Cocktail", image_url: "https://lh3.googleusercontent.com/tmwh4gBGreRyBTqSzcaihT-4qaPyNflb2th6d3QQncj_B-ruWYEjrI331vIxNgpyIelqbcX8Us4zqMjMUgBlYQ=s90-c", time: 900, ingredients: "ice cubes, Citadelle Gin, orange juice, pomegranate liqueur, prosecco, orange segments, pomegranate seeds")

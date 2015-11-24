@@ -1,7 +1,6 @@
-class BarsController < ApplicationController 
-
-  def index
-    @bars = Bar.all
+class	Api::BarsController < ApplicationController
+	def index
+		#USER INPUT
     address = params[:address]
     postcode = params[:postcode]
     @location = address
@@ -9,9 +8,9 @@ class BarsController < ApplicationController
     	@location = @location + " " + postcode
     end
     @day = params[:day]
-  end
 
-  def list
-  end
-
+    #FROM THE BACK
+		@bars = Bar.all
+		render json: @bars
+	end
 end

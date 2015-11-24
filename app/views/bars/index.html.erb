@@ -1,0 +1,21 @@
+<section class="info">
+	<div class="detail">
+		<div class="bar-list">
+		<p class="location"><%= @location %></p>
+		<p><%= @day %></p>
+			<% @bars.each do |bar| %>
+				<p><%= bar.name %></p>
+				<p><%= bar.longitude %></p>
+				<p><%= bar.latitude %></p>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="map">
+		
+	</div>
+</section>
+
+<script>
+ $('document').ready(initMap());
+</script>

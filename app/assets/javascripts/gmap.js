@@ -1,81 +1,108 @@
-$('document').ready(function() {
+function initMap() {
   var map;
   var geocoder = new google.maps.Geocoder();
+  var location = $('.location').text();
 
-  var drawMap = function(mapOptions) {
-    map = new google.maps.Map( $('.map')[0], mapOptions );
-  };
-  var mapOptions = {
-            zoom: 14,
+  // var drawMarker = function(bar_location) {
+  //   geocoder.geocode( { 'address': bar_location }, function(results, status) {
+  //     console.log("Input location: " + location +"NOT NEARBY!");
+  //     if ( status == google.maps.GeocoderStatus.OK ) {
+  //       map.setCenter(results[0].geometry.location);
+  //       var marker = new google.maps.Marker({
+  //           map: map,
+  //           zoom: 16,
+  //           scrollwheel: false,
+  //           position: results[0].geometry.location
+  //       });
+  //     } else {
+  //       alert('Geocode was not successful for the following reason: ' + status);
+  //     }
+  //   });
+  // };
+
+
+  // Check location
+  console.log("Input location: " + location);
+  map = new google.maps.Map($('.map')[0], {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 6
+  });
+  var infoWindow = new google.maps.InfoWindow({map: map});
+
+  if ( location == "Nearby" ) {
+  // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      console.log("Input location in NEARBY:" + location + "HERE");
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('Location found.');
+        map.setCenter(pos);
+      }, function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+
+  } else { // IF SOMETHING ELSE BUT NEARBY
+    geocoder.geocode( { 'address': location }, function(results, status) {
+      console.log("Input location: " + location +"NOT NEARBY!");
+      if ( status == google.maps.GeocoderStatus.OK ) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            zoom: 16,
             scrollwheel: false,
-            center: { lat: -37.8064071, lng: 144.8605126 }
-          };
-  drawMap(mapOptions);
-  var searchAddress = function() {
-    // Input box
-    var address = $('.address').val();
-
-    // Dropdown box
-    // var address = $( "select.address option:selected").val();
-
-    var infoWindow = new google.maps.InfoWindow( { map: map } );
-          
-    // Check if location Nearby
-    if ( address == "Nearby") {
-
-      // Nearby True
-      // Try HTML5 geolocation.
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-
-          var mapOptions = {
-            zoom: 14,
-            scrollwheel: false,
-            center: pos
-          };
-
-          drawMap(mapOptions);
-
-          infoWindow.setPosition(pos);
-          infoWindow.setContent('Location found.');
-        }, function() {
-          handleLocationError(true, infoWindow, map.getCenter());
+            position: results[0].geometry.location
         });
       } else {
-        // Browser doesn't support Geolocation
-        console.log(map.getCenter())
-        handleLocationError(false, infoWindow, map.getCenter());
+        alert('Geocode was not successful for the following reason: ' + status);
       }
-
-    // Another Location
-    } else {
-      geocoder.geocode( { 'address': address }, function(results, status) {
-        if ( status == google.maps.GeocoderStatus.OK ) {
-          console.log(results[0].geometry.location);
-          var mapOptions = {
-            zoom: 14,
-            scrollwheel: false,
-            // center: { lat: -37.8064071, lng: 144.8605126}
-            center: results[0].geometry.location
-          }
-          drawMap(mapOptions);
-        } else {
-          console.log("Geocode was not successful.")
-        }
-      }); 
-    }
-  };
-
-  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-                          'Error: The Geolocation service failed.' :
-                          'Error: Your browser doesn\'t support geolocation.');
+    });
+    // showBars();
   }
-  $('#search-btn').on('click', searchAddress);
-});
+
+  // PUT ALL BARS MARKER
+  // var drawMarker = function() {
+  //   geocoder.geocode( { 'address': "Flinders St Station, VIC 3000" }, function(results, status) {
+  //     console.log("Input location: " + location +"NOT NEARBY!");
+  //     if ( status == google.maps.GeocoderStatus.OK ) {
+  //       map.setCenter(results[0].geometry.location);
+  //       var marker = new google.maps.Marker({
+  //           map: map,
+  //           zoom: 16,
+  //           scrollwheel: false,
+  //           position: results[0].geometry.location
+  //       });
+  //     } else {
+  //       alert('Geocode was not successful for the following reason: ' + status);
+  //     }
+  //   });
+  // };
+
+}
+
+// var showBars = function() {
+//   var options = {
+//     url: 'http://localhost:3000/api/bars',
+//     type: 'GET',
+//     dataType: 'json'
+//   };
+
+//   $.ajax(options).done(function(data) {
+//     console.log(data);
+//   });
+// };
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+}

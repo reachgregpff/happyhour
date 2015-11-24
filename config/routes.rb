@@ -22,7 +22,6 @@ Rails.application.routes.draw do
 
   #display bars
   resources :bars
-  get '/list' => 'bars#list'
 
 
   #API HERE 
