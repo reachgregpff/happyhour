@@ -21,7 +21,8 @@ function initMap() {
         var marker = new google.maps.Marker ({
           position: {lat: bar.latitude, lng: bar.longitude},
           map: map,
-          title: bar.name
+          title: bar.name,
+          // icon: "/assets/blueMarker.png"
         });
       });
     });
