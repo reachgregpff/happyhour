@@ -1,11 +1,14 @@
 class BarsController < ApplicationController 
 
   def index
-    redirect_to "/list?city=melbourne"
+    @bars = Bar.all
+    address = params[:address]
+    postcode = params[:postcode]
+    @location = address + " " + postcode
+    @day = params[:day]
   end
 
   def list
-    @bars = Bar.all
   end
 
 end
