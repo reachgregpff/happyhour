@@ -7,10 +7,24 @@
             <input class="day" type="text" value="Friday" name="day">
 						<button id="search-btn">Search</button>
 					<% end %>
-
+          <%= session[:user_id] %>
           <h2 style="color:tomato;">WE HAVE A NEW FREAKING "HAPPY HOUR WEBSITE"</h2>
           <img style="width:90%;" src="/WeGotIt.png" alt="">
           <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. </p>
           <a class="btn btn-info" href="/cocktails">Form for user input here</a>
+
+          <%= form_tag '/login', method: 'post' do %>
+          <label for="">email</label>
+           <input type="text" name="email">
+
+          <label for="">password</label>
+          <input type="password" name="password">
+          <button>login</button>
+
+          <% end %>
+
+          <%= form_tag '/logout', method: 'delete' do %>
+          <button>logout</button>
+          <% end %>
       </div>
     </div>
