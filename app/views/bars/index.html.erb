@@ -2,6 +2,16 @@
 	<div class="detail">
 		<div class="bar-list">
 		<p class="location"><%= @location %></p>
+<<<<<<< HEAD
+<!-- 		<p>hello <%= @address %></p> -->
+<!-- 		<p><%= @postcode %></p> -->
+		<p><%= @day %></p>
+			<% @bars.each do |bar| %>
+				<h3><%= bar.name %></h3>
+				<p><%= bar.address %></p>
+				<a href="<%= bar.website %>"><%= bar.website %></a>
+			<% end %>
+=======
 		<!-- <p>hello <%#= @address %></p>
 		<p><%#= @postcode %></p>
 		<p><%#= @day %></p>
@@ -10,6 +20,7 @@
 				<p><%#= bar.longitude %></p>
 				<p><%#= bar.latitude %></p> -->
 			<%# end %>
+>>>>>>> c6ad30f5e40d68993aa4740681bfe433bf7d5382
 		</div>
 	</div>
 

@@ -1,7 +1,7 @@
-class	Api::BarsController < ApplicationController
-	def index
+class Api::BarsController < ApplicationController
+  def index
     #FROM THE BACK
-		@bars = Bar.all
-		render json: @bars
-	end
+    @bars = Bar.all
+    render json: @bars
+  end
 end
