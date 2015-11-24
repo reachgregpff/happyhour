@@ -3,6 +3,30 @@ function initMap() {
   var geocoder = new google.maps.Geocoder();
   var location = $('.location').text();
 
+  // SHOW BAR INSIDE INITMAP()
+  var showBars = function() {
+    var $barList = $('.bar-list');
+    var options = {
+      url: 'http://localhost:3000/api/bars',
+      type: 'GET',
+      dataType: 'json'
+    };
+
+    $.ajax(options).done(function(data) {
+      _.each(data, function(bar) {
+        // var compiled = _.template( $('#bar-box-template').html() );
+        // var html = compiled( {name: bar.name, lat:bar.latitude, lng:bar.longitude } );
+        // $barList.append(html);
+        
+        var marker = new google.maps.Marker ({
+          position: {lat: bar.latitude, lng: bar.longitude},
+          map: map,
+          title: bar.name
+        });
+      });
+    });
+  };
+
   // var drawMarker = function(bar_location) {
   //   geocoder.geocode( { 'address': bar_location }, function(results, status) {
   //     console.log("Input location: " + location +"NOT NEARBY!");
@@ -65,7 +89,7 @@ function initMap() {
         alert('Geocode was not successful for the following reason: ' + status);
       }
     });
-    // showBars();
+    showBars();
   }
 
   // PUT ALL BARS MARKER
@@ -85,20 +109,9 @@ function initMap() {
   //     }
   //   });
   // };
-
 }
 
-// var showBars = function() {
-//   var options = {
-//     url: 'http://localhost:3000/api/bars',
-//     type: 'GET',
-//     dataType: 'json'
-//   };
 
-//   $.ajax(options).done(function(data) {
-//     console.log(data);
-//   });
-// };
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
