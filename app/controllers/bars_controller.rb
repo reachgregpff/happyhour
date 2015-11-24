@@ -14,4 +14,8 @@ class BarsController < ApplicationController
   def list
   end
 
+  def show
+    @bars = Bar.find(params[:id])
+  end
+
 end
