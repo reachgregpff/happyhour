@@ -17,9 +17,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+#Clear Barfave Table
+User.delete_all
+
 User.create(name: 'admin', email: 'admin@admin.com', password: 'password', address:'45 William St', access_level: 2);      
 User.create(name: 'gitlord', email: 'git@lord.com', password: 'lordgit', address:'46 William St', access_level: 3);
 User.create(name: 'dt', email: 'd@t.com', password: 'cakepudding', address:'30 William St', access_level: 1);     
+
+#Clear Drinkfave Table
+Drinkfave.delete_all
 
 Drinkfave.create(user_id: 1, cocktail_id: 1);
 Drinkfave.create(user_id: 2, cocktail_id: 1);
@@ -28,6 +34,10 @@ Drinkfave.create(user_id: 1, cocktail_id: 2);
 Drinkfave.create(user_id: 2, cocktail_id: 3);
 Drinkfave.create(user_id: 3, cocktail_id: 3);
 
+
+#Clear Barfave Table
+Barfave.delete_all
+
 Barfave.create(user_id: 1, bar_id: 1);
 Barfave.create(user_id: 2, bar_id: 1);
 Barfave.create(user_id: 3, bar_id: 1);
@@ -35,7 +45,8 @@ Barfave.create(user_id: 1, bar_id: 2);
 Barfave.create(user_id: 2, bar_id: 3);
 Barfave.create(user_id: 3, bar_id: 3);
 
-
+#Clear Bar Table
+Bar.delete_all
 
 #Bar records
 Bar.create(name: 'Mr Mason', address: 'Shop 10, 530 Collins Street, Melbourne', image_url: 'assets/images/champagne.jpg', latitude: -37.818132, longitude: 144.956973, offer: 'What: $5 pints of beer, house wine & basic spirits, When: Monday - Thursday, Time: 5pm – 7pm', website: 'http://www.mrmason.com.au', phone: '(03) 9614 4500',user_id: 1);
