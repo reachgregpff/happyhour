@@ -2,6 +2,8 @@
 	<div class="detail">
 		<div class="bar-list">
 		<p class="location"><%= @location %></p>
+		<p>hello <%= @address %></p>
+		<p><%= @postcode %></p>
 		<p><%= @day %></p>
 			<% @bars.each do |bar| %>
 				<p><%= bar.name %></p>
