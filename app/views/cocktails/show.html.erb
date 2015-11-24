@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div style="background-color: white; border: 2px solid red;" class="col-md-6">
+      <h2><%=@cocktail["name"]%></h2>
+      <img style="width:100%" src="<%=@cocktail["images"][0]["imageUrlsBySize"]["360"]%>" alt= ""></img>
+
+      <h4>Preparation Time: <%=@cocktail["prepTime"]%></h4>
+      <h4>Number of Servings: <%=@cocktail["numberOfServings"]%></h4>
+      <h4>Ingredients:</h4>
+      <p><%=@cocktail["ingredientLines"]%></p>
+
+      <h4>Source: <%=@cocktail["source"]["sourceDisplayName"]%></h4>
+      <h4>Directions: <a href="<%=@cocktail["source"]["sourceRecipeUrl"]%>"><%=@cocktail["source"]["sourceRecipeUrl"]%></a></h4>
+    </div>
+    <div class="col-md-3">
+      <img href="https://drinkwise.org.au/" src="/drinkwise.png" alt="drink wise"></img>
+    </div>
+    <div class="col-md-3">
+    <p style="font-weight: bold">This page is powered by</p>
+    <a href="https://www.yummly.com"><img style="width: 30%;"  src="/yummly.png" alt="drink wise"></a>
+    </div>
+  </row>
+</div>
+</div>
