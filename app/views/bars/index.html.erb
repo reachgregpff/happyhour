@@ -2,14 +2,14 @@
 	<div class="detail">
 		<div class="bar-list">
 		<p class="location"><%= @location %></p>
-		<p>hello <%= @address %></p>
-		<p><%= @postcode %></p>
-		<p><%= @day %></p>
-			<% @bars.each do |bar| %>
-				<p><%= bar.name %></p>
-				<p><%= bar.longitude %></p>
-				<p><%= bar.latitude %></p>
-			<% end %>
+		<!-- <p>hello <%#= @address %></p>
+		<p><%#= @postcode %></p>
+		<p><%#= @day %></p>
+			<%# @bars.each do |bar| %>
+				<p><%#= bar.name %></p>
+				<p><%#= bar.longitude %></p>
+				<p><%#= bar.latitude %></p> -->
+			<%# end %>
 		</div>
 	</div>
 
@@ -17,6 +17,15 @@
 		
 	</div>
 </section>
+
+ <script id="bar-box-template" type="text/x-underscore-template">
+    
+      <img src={{ image_url }}>
+      <header class="content">
+        <h1>{{ name }}</h1>
+      </header>
+      
+  </script>
 
 <script>
  $('document').ready(initMap());

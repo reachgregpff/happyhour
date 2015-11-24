@@ -1,4 +1,9 @@
 function initMap() {
+
+  _.templateSettings = {
+    interpolate: /\{\{(.+?)\}\}/g
+  };
+
   var map;
   var geocoder = new google.maps.Geocoder();
   var location = $('.location').text();
@@ -14,9 +19,11 @@ function initMap() {
 
     $.ajax(options).done(function(data) {
       _.each(data, function(bar) {
-        // var compiled = _.template( $('#bar-box-template').html() );
-        // var html = compiled( {name: bar.name, lat:bar.latitude, lng:bar.longitude } );
-        // $barList.append(html);
+        // console.log(bar.name);
+
+        var compiled = _.template( $('#bar-box-template').html() );
+        var html = compiled( {name: bar.name, image_url: bar.image_url } );
+        $barList.append(html);
         
         var marker = new google.maps.Marker ({
           position: {lat: bar.latitude, lng: bar.longitude},
@@ -27,23 +34,6 @@ function initMap() {
       });
     });
   };
-
-  // var drawMarker = function(bar_location) {
-  //   geocoder.geocode( { 'address': bar_location }, function(results, status) {
-  //     console.log("Input location: " + location +"NOT NEARBY!");
-  //     if ( status == google.maps.GeocoderStatus.OK ) {
-  //       map.setCenter(results[0].geometry.location);
-  //       var marker = new google.maps.Marker({
-  //           map: map,
-  //           zoom: 16,
-  //           scrollwheel: false,
-  //           position: results[0].geometry.location
-  //       });
-  //     } else {
-  //       alert('Geocode was not successful for the following reason: ' + status);
-  //     }
-  //   });
-  // };
 
 
   // Check loction
@@ -82,7 +72,6 @@ function initMap() {
         map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
             map: map,
-            zoom: 16,
             scrollwheel: false,
             position: results[0].geometry.location
         });
@@ -92,24 +81,6 @@ function initMap() {
     });
     showBars();
   }
-
-  // PUT ALL BARS MARKER
-  // var drawMarker = function() {
-  //   geocoder.geocode( { 'address': "Flinders St Station, VIC 3000" }, function(results, status) {
-  //     console.log("Input location: " + location +"NOT NEARBY!");
-  //     if ( status == google.maps.GeocoderStatus.OK ) {
-  //       map.setCenter(results[0].geometry.location);
-  //       var marker = new google.maps.Marker({
-  //           map: map,
-  //           zoom: 16,
-  //           scrollwheel: false,
-  //           position: results[0].geometry.location
-  //       });
-  //     } else {
-  //       alert('Geocode was not successful for the following reason: ' + status);
-  //     }
-  //   });
-  // };
 }
 
 
