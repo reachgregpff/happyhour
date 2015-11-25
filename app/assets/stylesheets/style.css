@@ -7,13 +7,12 @@ html, body {
 	width: 80%;
 	padding: 0;
 }
-.jumbotron p {
+.jumbotron {
 /*	padding: 3px;*/
 	padding-top: 0;
 	padding-bottom: 20px;
 	padding-right: 10px;
 	padding-left: 10px;
-	font-size: 18px;
 }
 #logo {
 	width: 100px;
@@ -45,17 +44,23 @@ html, body {
 }
 
 p {
-	margin: 0 0 4px 0;
+	margin-top: 0;
+	margin-bottom: 4px;
+	margin-right: 0;
+	margin-left: 0;
+	font-size: 1em;
 }
 
 h2 {
 	margin-top: 0;
+	font-size: 2.5em;
 }
 
 h3 {
-	margin: 7px 0 5px 0;
+	margin-top: 0.5em;
+	margin-bottom: .2em;
 	font-weight: bold;
-	font-size: 19px;
+	font-size: 1.3em;
 }
 .detail {
 		margin: 0 0 0 4px;
