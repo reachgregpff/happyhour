@@ -7,27 +7,12 @@ function initMap() {
   var map;
   var geocoder = new google.maps.Geocoder();
   var location = $('.location').text();
-
-
-
   //ADDED ---- GREG
   var myLat = null;
   var myLong = null;
-
-  $.ajax({
-    url: "http://maps.googleapis.com/maps/api/geocode/json?address="+location+"&sensor=false",
-    type: "POST",
-    success: function(res){
-      console.log("IN AJAX" + res.results[0].geometry.location.lat);
-      myLat = res.results[0].geometry.location.lat;
-      console.log("IN AJAX" + res.results[0].geometry.location.lng);
-      myLong = res.results[0].geometry.location.lng;
-    }
-  });
-
-  function rad(x) {return x*Math.PI/180;}
   //END --- GREG
 
+function rad(x) {return x*Math.PI/180;}
 
   // SHOW BAR INSIDE INITMAP()
   var showBars = function() {
@@ -39,21 +24,6 @@ function initMap() {
     };
 
     $.ajax(options).done(function(data) {
-      /*_.each(data, function(bar) {
-        // console.log(bar.name);
-
-        var compiled = _.template( $('#bar-box-template').html() );
-        var html = compiled( {name: bar.name, image_url: bar.image_url } );
-        $barList.append(html);
-        
-        var marker = new google.maps.Marker ({
-          position: {lat: bar.latitude, lng: bar.longitude},
-          map: map,
-          title: bar.name,
-          // icon: "/assets/blueMarker.png"
-        });
-      }); */
-
       //first we get the lat and lng from the address, 
       //since the ajax above is unsynchronous, we are assuming by now the lat and long for current position will be fetched
       
@@ -74,22 +44,24 @@ function initMap() {
             Math.cos(rad(myLat)) * Math.cos(rad(myLat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         var d = R * c;
-        console.log("DISTANCE IS : " + d);
+        // console.log("DISTANCE IS: " + d);
         var distance_index = [d, id]
         distances.push(distance_index);
         id++;
       });
 
-      console.log(distances);
+      // console.log("Area of distance and index: " + distances);
+      // SORTING DISTANCE OF BARS
       distances = distances.sort();
-      console.log(distances);
+      // console.log("Area of distance and index after sorting: " + distances);
 
       for(var i=0; i<10; i++) {  // list only closest 10 
 
         var compiled = _.template( $('#bar-box-template').html() );
         sort_order = distances[i][1];  // Fetch the id field of each pair in distances
-        console.log("THIS IS THE SORT ORDER" + sort_order);
-        var html = compiled( {name: data[sort_order].name, image_url: data[sort_order].image_url } );
+        // console.log("THIS IS THE SORT ORDER: " + sort_order);
+        var html = compiled( {name: data[sort_order].name, image_url: data[sort_order].image_url, 
+                              address: data[sort_order].address, website: data[sort_order].website } );
         $barList.append(html);
         
         var marker = new google.maps.Marker ({
@@ -117,7 +89,7 @@ function initMap() {
   if ( location == "Nearby" ) {
   // Try HTML5 geolocation.
     if (navigator.geolocation) {
-      console.log("Input location in NEARBY:" + location + "HERE");
+      console.log("Input location in NEARBY:" + location + " HERE");
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
           lat: position.coords.latitude,
@@ -127,6 +99,9 @@ function initMap() {
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
         map.setCenter(pos);
+        console.log("LatLng of Nearby: " + pos);
+        myLat = position.coords.latitude;
+        myLong = position.coords.longitude;
         showBars();
       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
@@ -138,7 +113,7 @@ function initMap() {
 
   } else { // IF SOMETHING ELSE BUT NEARBY
     geocoder.geocode( { 'address': location }, function(results, status) {
-      console.log("Input location: " + location +"NOT NEARBY!");
+      console.log("Input location: " + location +" NOT NEARBY!");
       if ( status == google.maps.GeocoderStatus.OK ) {
         map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
@@ -146,11 +121,14 @@ function initMap() {
             scrollwheel: false,
             position: results[0].geometry.location
         });
+        console.log("Other than Nearby LatLng: " + results[0].geometry.location);
+        myLat = results[0].geometry.location.lat();
+        myLong = results[0].geometry.location.lng();
+        showBars();
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
     });
-    showBars();
   }
 }
 

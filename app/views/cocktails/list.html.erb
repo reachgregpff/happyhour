@@ -9,12 +9,10 @@
       </div>
       <center>
         <div class="col-md-4">
-        <a href="https://drinkwise.org.au/"><img  src="/drinkwise.png" alt="drink wise"></a>
-      </center>
-      <center>
+        </div>
         <div class="col-md-4">
         <p style="font-weight: bold">This page is powered by</p>
-        <a href="https://www.yummly.com"><img style="width: 30%;"  src="/yummly.png" alt="drink wise"></a>
+        <a href="https://www.yummly.com"><img style="width: 20%;"  src="/yummly.png" alt="drink wise"></a>
       </center>
     </div>
   </div>
@@ -31,7 +29,7 @@
 
 
     <a href="/cocktails/<%=cocktail.cocktail_id%>">
-      <div style="height:240px;background-color: white; border: 2px solid red; border-radius: 10%;" class="col-md-2">
+      <div style="margin:1%;height:240px;background-color: white; border: 2px solid red; border-radius: 10%;" class="col-md-2">
         <h6><%=cocktail.name%></h6>
 
         <% if cocktail.image_url != "Image Not Available" %>
@@ -40,7 +38,7 @@
           <img style="width:98%;" src="/Cocktailani.gif" alt="Cocktail"></img>
         <% end %>
 
-        <p style="font-size: 12px"><%=cocktail.ingredients%></p>
+        <p style="font-size: 8px"><%=cocktail.ingredients%></p>
       </div>
     </a>
 
