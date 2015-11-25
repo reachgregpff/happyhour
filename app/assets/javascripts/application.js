@@ -16,3 +16,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require gmap
+//= require bootstrap.min
