@@ -1,72 +1,78 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Happy Hour</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjg9bIT14JyvtW7I5lHcLWjJF8F140sV8"></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-<!--   <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type> -->
-<link href="/assets/bootstrap/css/bootstrap.theme.css" rel="stylesheet" type>
-  <link href="/stylesheets/style.css" rel="stylesheet" type>
-</head>
-<body style="background-color: #FFCC33">
-
-<nav class="navbar navbar-default" role="navigation">
-  <div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
-  <div class="container">
-        <img id="logo" class="navbar-brand" src="/assets/hh_logo2.png">
-<<<<<<< HEAD
-    <ul class="nav navbar-nav navbar-right ">
-    <li class="active"><a href="#">HappyHourBars</a></li>
+  <head>
+    <title>Happy Hour</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjg9bIT14JyvtW7I5lHcLWjJF8F140sV8"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <!--   <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type> -->
+    <!-- <link href="/assets/bootstrap/css/bootstrap.theme.css" rel="stylesheet" type>
+    <link href="/stylesheets/style.css" rel="stylesheet" type> -->
+  </head>
+  <body style="background-color: #FFCC33">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
+        <div class="container">
+          <img id="logo" class="navbar-brand" src="/assets/hh_logo2.png">
+          <ul class="nav navbar-nav navbar-right ">
+            <li class="active"><a href="/">HappyHourBars</a></li>
             <li><a href="#">HappyHours@Home</a></li>
             <li><a href="#">Favourites</a></li>
-            <li><a href="#">Developers</a></li>
             <li><a href="#">Contact</a></li>
-      <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Login</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="modal fade" id="myModal">
-  <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">Log-in</h4>
+            <%if logged_in? == false%>
+            <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Login</a></li>
+            <%else%>
+            <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Logout</a></li>
+            <%end%>
+          </ul>
         </div>
-
-        <div class="modal-body">
-          <div class="form-group">
-          <%= form_tag '/login', method: 'post' do %>
-        <label for="exampleInputEmail1">Email address</label>
-        <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email" name="email">
-        </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-      <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password" name="password">
-      </div>
-          <p class="text-right"><a href="#">Forgot password?</a></p>
-        </div>
-        <div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn">Close</a>
-          <button class="btn btn-primary">Log-in</button>
-          <%end%>
-
-        </div>
-      </div>
-    </div>
-</div>
-
-<%= yield %>
-
-<!-- <div class="navbar">
-
-  <div class="container navbar-default navbar-fixed-bottom">
-    <p>Site built by HappyHour Inc</p>
-  </div>
-
-</div> -->
-
-</body>
-</html>
+      </nav>
+      <div class="modal fade" id="myModal">
+        <%if logged_in? == false%>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Log-in</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <%= form_tag '/login', method: 'post' do %>
+                <label for="exampleInputEmail1">Email address</label>
+                <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password" name="password">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#" data-dismiss="modal" class="btn">Close</a>
+              <button class="btn btn-primary">Log-in</button>
+              <%end%>
+              <%else%>
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Log-Out</h4>
+                  </div>
+                  <%= form_tag '/logout', method: 'delete' do %>
+                  <div class="modal-footer">
+                    <a href="#" data-dismiss="modal" class="btn">Close</a>
+                    <button class="btn btn-primary">Log-Out</button>
+                    <%end %>
+                    <%end%>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%= yield %>
+            <!-- <div class="navbar">
+              <div class="container navbar-default navbar-fixed-bottom">
+                <p>Site built by HappyHour Inc</p>
+              </div>
+            </div> -->
+          </body>
+        </html>
