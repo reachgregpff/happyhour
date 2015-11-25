@@ -28,11 +28,15 @@ html, body {
 }
 .detail {
 	width: 48.5%;
-	height: 98vh;
+	height: 90vh;
 	display: inline-block;
-	margin-right: 1%;
+	/*margin-right: 1%;*/
 /*	margin-bottom: 0;*/
-	overflow: scroll;
+	/*overflow: scroll-x;*/
+}
+.bar-list {
+	height: 90vh;
+	overflow-y: scroll;
 }
 .map {
 	width: 48.5%;
