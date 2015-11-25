@@ -6,9 +6,11 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjg9bIT14JyvtW7I5lHcLWjJF8F140sV8"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type>
+<!--   <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type> -->
+<link href="/assets/bootstrap/css/bootstrap.theme.css" rel="stylesheet" type>
+  <link href="/stylesheets/style.css" rel="stylesheet" type>
 </head>
-<body>
+<body style="background-color: #FFCC33">
 
   <!-- <div class="navbar navbar-default" >a</div>  -->
     <div class="navbar navbar-inverse navbar-static-top" >
@@ -23,12 +25,12 @@
 
         <div class="collapse navbar-collapse navHeaderCollapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">HappyHourBars</a></li>
-            <li><a href="#">HappyHours@Home</a></li>
+            <li class="active"><a href="/">HappyHourBars</a></li>
+            <li><a href="/cocktails">HappyHour@Home</a></li>
             <li><a href="#">Favourites</a></li>
             <li><a href="#">Login</a></li>
 <!--             <li><a href="#">Developers</a></li> -->
-            <li><a href="#">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
       </div>
