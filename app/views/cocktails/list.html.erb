@@ -1,63 +1,114 @@
 
-<%  count = 0 %>
+<%  count = 0 
+    @page = @page.to_i%>
 
-<div style=" background-color: ##FFCC33;" class="container">
+<div class="container">
     <div class="row">
       <div class="col-md-4">
         <h6 style="font-weight: bold">Total cocktails to choose from: <%=@cocktails.count%></h6>
-        <h4>Cocktails 1 to 1000...</h4>
+        <h4>Cocktails <%=(@page-1)*100+1%> to <%=(@page-1)*100+100%>...</h4>
       </div>
       <center>
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
         <h6 style="font-weight: bold">This page is powered by</h6>
-        <a href="https://www.yummly.com"><img style="width: 20%;"  src="/yummly.png" alt="drink wise"></a>
+        <a href="https://www.yummly.com"><img style="width: 20%;"  src="/yummly.png"></a>
       </center>
     </div>
   </div>
 </div>
 
+
 <div class="container">
-    <div class="row">
-
-
-
-<% @cocktails.each do |cocktail|  %>
-
-  <!-- <img style-"width: 100%;" src="http://7-themes.com/data_images/out/30/6871862-beach-scenery.jpg" alt=""> -->
-
-
-    <a href="/cocktails/<%=cocktail.cocktail_id%>">
-      <div style="margin:1%;height:260px;background-color: white; border-radius: 10%;" class="col-md-2">
-        <h5><%=cocktail.name%></h5>
-
-        <% if cocktail.image_url != "Image Not Available" %>
-          <img src=<%=cocktail.image_url%> alt=""></img>
+  <div class="row">
+    <div data-total="<%=@cocktails.count%>" id="number-scroll" class="col-md-12">
+      <center>
+        <a href="/cocktails/1">
+          <button data-end="01" id="last-button" class="number-button">Page 01</button>
+        </a>
+        <% if @page == 1%>
+          <button data-start="1" id="prev-button"  class="number-button" disabled>Prev Page</button>
         <% else %>
-          <img style="width:98%;" src="/Cocktailani.gif" alt="Cocktail"></img>
+          <a href="/cocktails/<%=@page-1%>">
+            <button data-start="1" id="prev-button"  class="number-button">Prev Page</button>
+          </a>
         <% end %>
-
-        <p style="font-size: 12px"><%=cocktail.ingredients%></p>
-      </div>
-    </a>
-
-
-<% 
-
-  count = count + 1
-  if count == 1000
-    break
-  end
-  
-end %>
-
+        <% if @page == (@cocktails.count/100)%>
+          <button data-end="100" id="next-button" class="number-button" disabled>Next Page</button>
+        <% else %>
+          <a href="/cocktails/<%=@page+1%>">
+            <button data-end="100" id="next-button" class="number-button">Next Page</button>
+          </a>
+        <% end %>
+        <a href="/cocktails/<%=@cocktails.count/100%>">
+          <button data-end="<%=@cocktails.count/100%>" id="last-button" class="number-button">Page <%=@cocktails.count/100%></button> 
+        </a>    
+      </center>
+    </div>
   </div>
 </div>
 
 
-    <script src = "jquery-1.11.3.min.js" ></script>
-    <script src = "bootstrap/js/bootstrap.js" ></script>
+
+
+<div class="container">
+    <div class="row">
+
+<% for i in ((@page-1)*100)..((@page-1)*100+99)%>
+
+    <a href="/cocktails/show/<%=@cocktails[i].cocktail_id%>">
+      <div id="cocktail-tile" class="col-md-2">
+        <h5><%=@cocktails[i].name%></h5>
+
+        <% if @cocktails[i].image_url != "Image Not Available" %>
+          <img src=<%=@cocktails[i].image_url%> alt=""></img>
+        <% else %>
+          <img id="cocktail-tile-image" src="/Cocktailani.gif" alt="Cocktail"></img>
+        <% end %>
+
+        <p style="font-size: 12px"><%=@cocktails[i].ingredients%></p>
+      </div>
+    </a>
+
+
+<% end %>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div data-total="<%=@cocktails.count%>" id="number-scroll" class="col-md-12">
+      <center>
+        <a href="/cocktails/1">
+          <button data-end="01" id="last-button" class="number-button">Page 01</button>
+        </a>
+        <% if @page == 1%>
+          <button data-start="1" id="prev-button"  class="number-button" disabled>Prev Page</button>
+        <% else %>
+          <a href="/cocktails/<%=@page-1%>">
+            <button data-start="1" id="prev-button"  class="number-button">Prev Page</button>
+          </a>
+        <% end %>
+        <% if @page == (@cocktails.count/100)%>
+          <button data-end="100" id="next-button" class="number-button" disabled>Next Page</button>
+        <% else %>
+          <a href="/cocktails/<%=@page+1%>">
+            <button data-end="100" id="next-button" class="number-button">Next Page</button>
+          </a>
+        <% end %>
+        <a href="/cocktails/<%=@cocktails.count/100%>">
+          <button data-end="<%=@cocktails.count/100%>" id="last-button" class="number-button">Page <%=@cocktails.count/100%></button> 
+        </a>    
+      </center>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
 

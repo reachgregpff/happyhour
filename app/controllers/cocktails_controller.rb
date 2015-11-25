@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController 
 
   def list
+    @page = params[:page]
     @cocktails = Cocktail.all
   end
 
