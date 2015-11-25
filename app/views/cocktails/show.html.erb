@@ -1,6 +1,6 @@
-<div class="container">
+<div style="margin-top: 10px;" class="container">
   <div class="row">
-    <div style="background-color: white; border: 2px solid red;" class="col-md-6">
+    <div style="padding:3%; background-color: white; border-radius: 10%;" class="col-md-8">
       <h2><%=@cocktail["name"]%></h2>
       <img style="width:100%" src="<%=@cocktail["images"][0]["imageUrlsBySize"]["360"]%>" alt= ""></img>
 
@@ -13,10 +13,7 @@
       <h4>Directions: <a href="<%=@cocktail["source"]["sourceRecipeUrl"]%>"><%=@cocktail["source"]["sourceRecipeUrl"]%></a></h4>
     </div>
     <div class="col-md-3">
-      <img href="https://drinkwise.org.au/" src="/drinkwise.png" alt="drink wise"></img>
-    </div>
-    <div class="col-md-3">
-    <p style="font-weight: bold">This page is powered by</p>
+    <h6 style="font-weight: bold">This page is powered by</h6>
     <a href="https://www.yummly.com"><img style="width: 30%;"  src="/yummly.png" alt="drink wise"></a>
     </div>
   </row>
