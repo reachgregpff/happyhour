@@ -12,21 +12,25 @@
 </head>
 <body style="background-color: #FFCC33">
 
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
-  <div class="container">
+  <div class="container-fluid">
+    <a href="/">
         <img id="logo" class="navbar-brand" src="/assets/hh_logo2.png">
-<<<<<<< HEAD
+    </a>
+
     <ul class="nav navbar-nav navbar-right ">
-    <li class="active"><a href="#">HappyHourBars</a></li>
-            <li><a href="#">HappyHours@Home</a></li>
+    <li class="active"><a href="/">HappyHourBars</a></li>
+            <li><a href="/cocktails">HappyHours@Home</a></li>
             <li><a href="#">Favourites</a></li>
-            <li><a href="#">Developers</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
       <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Login</a></li>
     </ul>
   </div>
 </nav>
+
+
 
 <div class="modal fade" id="myModal">
   <div class="modal-dialog">
@@ -57,6 +61,8 @@
       </div>
     </div>
 </div>
+
+
 
 <%= yield %>
 
