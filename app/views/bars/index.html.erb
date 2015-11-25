@@ -1,13 +1,8 @@
 <section class="info">
 	<div class="detail">
 		<div class="bar-list">
+		<p>Your location:</p>
 		<p class="location"><%= @location %></p>
-
-			<% @bars.each do |bar| %>
-				<h3><%= bar.name %></h3>
-				<p><%= bar.address %></p>
-				<a href="<%= bar.website %>"><%= bar.website %></a>
-			<% end %>
 
 		</div>
 	</div>
@@ -19,10 +14,13 @@
 
  <script id="bar-box-template" type="text/x-underscore-template">
     
-      <img src={{ image_url }}>
+      
       <header class="content">
-        <h1>{{ name }}</h1>
+        <h3>{{ name }}</h3>
       </header>
+      <img src={{ image_url }}>
+      <p> {{ address }}</p>
+      <a href={{ website}}> {{ website }} </a>
       
   </script>
 

@@ -89,7 +89,8 @@ function initMap() {
         var compiled = _.template( $('#bar-box-template').html() );
         sort_order = distances[i][1];  // Fetch the id field of each pair in distances
         console.log("THIS IS THE SORT ORDER" + sort_order);
-        var html = compiled( {name: data[sort_order].name, image_url: data[sort_order].image_url } );
+        var html = compiled( {name: data[sort_order].name, image_url: data[sort_order].image_url, 
+                              address: data[sort_order].address, website: data[sort_order].website } );
         $barList.append(html);
         
         var marker = new google.maps.Marker ({
