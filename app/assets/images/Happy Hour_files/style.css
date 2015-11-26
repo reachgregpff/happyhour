@@ -568,8 +568,8 @@
   </td>
 </tr>
 <tr class='route_row' data-helper='path'>
-  <td data-route-name='api_barfafe'>
-      api_barfafe<span class='helper'>_path</span>
+  <td data-route-name='api_barfave'>
+      api_barfave<span class='helper'>_path</span>
   </td>
   <td data-route-verb='DELETE'>
     DELETE
