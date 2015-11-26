@@ -80,9 +80,6 @@ Bar.create(name: "Bungalow 8", address: '3 Lime St, Sydney, NSW, 2000', image_ur
 Bar.create(name: "Morrison Bar & Oyster Room", address: '225 George St, Sydney, NSW, 2000', image_url: 'https://lh4.googleusercontent.com/-ylGUkQNywrA/Uq-zmJYPqQI/AAAAAAAAAOM/m4s5PV0Ptzk/s213-k-no/', latitude: -33.863226, longitude: 151.207327, offer: '$5 House beer, wine and spirits 5pm-7pm, $10 Cocktails in the Parlour Bar 12-10pm on Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday', website: 'http://www.themorrison.com.au', phone: '9247 6744',user_id: 1);
 
 
->>>>>>> 75227f090df5faa54b14dfa700a601c38709b84e
-
-
 #Clear Cocktail Table
 Cocktail.delete_all
 
