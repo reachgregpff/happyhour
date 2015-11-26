@@ -60,11 +60,19 @@ function rad(x) {return x*Math.PI/180;}
         (function() {
 
           var compiled = _.template( $('#bar-box-template').html() );
+
+          
+
           sort_order = distances[i][1];  // Fetch the id field of each pair in distances
+          if (data[sort_order].starred){
+            var abc = 'clicked'
+          } else {
+            var abc = '';
+          }
           // console.log("THIS IS THE SORT ORDER: " + sort_order);
           var html = compiled( {id: data[sort_order].id, name: data[sort_order].name, image_url: data[sort_order].image_url, 
                                 address: data[sort_order].address, website: data[sort_order].website,
-                                offer: data[sort_order].offer, phone: data[sort_order].phone 
+                                offer: data[sort_order].offer, phone: data[sort_order].phone, abc: abc 
                               } );
           $barList.append(html);
           var marker = new google.maps.Marker ({
@@ -91,7 +99,7 @@ function rad(x) {return x*Math.PI/180;}
 
 
   // Check loction
-  console.log("Input location: " + location);
+  // console.log("Input location: " + location);
   map = new google.maps.Map($('.map')[0], {
     center: {lat: -34.397, lng: 150.644},
     zoom: 15
@@ -101,17 +109,23 @@ function rad(x) {return x*Math.PI/180;}
   if ( location === "Nearby" ) {
   // Try HTML5 geolocation.
     if (navigator.geolocation) {
-      console.log("Input location in NEARBY: " + location + " HERE");
+      // console.log("Input location in NEARBY: " + location + " HERE");
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        var infoWindow = new google.maps.InfoWindow({map: map});
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Your location');
+        // var infoWindow = new google.maps.InfoWindow({map: map});
+        // infoWindow.setPosition(pos);
+        // infoWindow.setContent('Your location');
         map.setCenter(pos);
-        console.log("LatLng of Nearby: " + pos);
+        var marker = new google.maps.Marker({
+            map: map,
+            // scrollwheel: false,
+            position: pos,
+            icon: "/assets/marker-star-3.png"
+        });
+        // console.log("LatLng of Nearby: " + pos);
         myLat = position.coords.latitude;
         myLong = position.coords.longitude;
         showBars();
@@ -127,15 +141,16 @@ function rad(x) {return x*Math.PI/180;}
 
   } else { // IF SOMETHING ELSE BUT NEARBY
     geocoder.geocode( { 'address': location }, function(results, status) {
-      console.log("Input location: " + location +" NOT NEARBY!");
+      //console.log("Input location: " + location +" NOT NEARBY!");
       if ( status == google.maps.GeocoderStatus.OK ) {
         map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
             map: map,
-            scrollwheel: false,
-            position: results[0].geometry.location
+            // scrollwheel: false,
+            position: results[0].geometry.location,
+            icon: "/assets/marker-star-3.png"
         });
-        console.log("Other than Nearby LatLng: " + results[0].geometry.location);
+        //console.log("Other than Nearby LatLng: " + results[0].geometry.location);
         myLat = results[0].geometry.location.lat();
         myLong = results[0].geometry.location.lng();
         showBars();

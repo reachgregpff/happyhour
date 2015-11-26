@@ -103,7 +103,7 @@ h3 {
 }
 
 #cocktail-tile-image{
-	width:98%;"
+	width:98%;
 }
 .contact_page {
 	width: 90%;
@@ -144,4 +144,8 @@ h3 {
 }
 .star:hover{
 color: #DD0066;
+}
+
+.clicked {
+	color: #DD0066;
 }
