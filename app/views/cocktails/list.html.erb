@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-4">
         <h6 style="font-weight: bold">Total cocktails to choose from: <%=@cocktails.count%></h6>
-        <h4>Cocktails <%=(@page-1)*100+1%> to <%=(@page-1)*100+100%>...</h4>
+        <h5>Cocktails <%=(@page-1)*100+1%> to <%=(@page-1)*100+100%>...</h5>
       </div>
       <center>
         <div class="col-md-4">
@@ -28,17 +28,17 @@
           <button data-end="01" id="last-button" class="number-button">Page 01</button>
         </a>
         <% if @page == 1%>
-          <button data-start="1" id="prev-button"  class="number-button" disabled>Prev Page</button>
+          <button data-start="1" id="prev-button"  class="number-button" disabled><<</button>
         <% else %>
           <a href="/cocktails/<%=@page-1%>">
-            <button data-start="1" id="prev-button"  class="number-button">Prev Page</button>
+            <button data-start="1" id="prev-button"  class="number-button"><<</button>
           </a>
         <% end %>
         <% if @page == (@cocktails.count/100)%>
-          <button data-end="100" id="next-button" class="number-button" disabled>Next Page</button>
+          <button  data-end="100" id="next-button" class="number-button" disabled>>></button>
         <% else %>
           <a href="/cocktails/<%=@page+1%>">
-            <button data-end="100" id="next-button" class="number-button">Next Page</button>
+            <button data-end="100" id="next-button" class="number-button">>></button>
           </a>
         <% end %>
         <a href="/cocktails/<%=@cocktails.count/100%>">
@@ -58,7 +58,7 @@
 <% for i in ((@page-1)*100)..((@page-1)*100+99)%>
 
     <a href="/cocktails/show/<%=@cocktails[i].cocktail_id%>">
-      <div id="cocktail-tile" class="col-md-2">
+      <div style="background-color: linen" id="cocktail-tile" class="col-md-2">
         <h5><%=@cocktails[i].name%></h5>
 
         <% if @cocktails[i].image_url != "Image Not Available" %>
@@ -85,17 +85,17 @@
           <button data-end="01" id="last-button" class="number-button">Page 01</button>
         </a>
         <% if @page == 1%>
-          <button data-start="1" id="prev-button"  class="number-button" disabled>Prev Page</button>
+          <button data-start="1" id="prev-button"  class="number-button" disabled><<</button>
         <% else %>
           <a href="/cocktails/<%=@page-1%>">
-            <button data-start="1" id="prev-button"  class="number-button">Prev Page</button>
+            <button data-start="1" id="prev-button"  class="number-button"><<</button>
           </a>
         <% end %>
         <% if @page == (@cocktails.count/100)%>
-          <button data-end="100" id="next-button" class="number-button" disabled>Next Page</button>
+          <button  data-end="100" id="next-button" class="number-button" disabled>>></button>
         <% else %>
           <a href="/cocktails/<%=@page+1%>">
-            <button data-end="100" id="next-button" class="number-button">Next Page</button>
+            <button data-end="100" id="next-button" class="number-button">>></button>
           </a>
         <% end %>
         <a href="/cocktails/<%=@cocktails.count/100%>">
