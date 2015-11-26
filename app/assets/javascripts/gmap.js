@@ -123,7 +123,7 @@ function rad(x) {return x*Math.PI/180;}
             map: map,
             // scrollwheel: false,
             position: pos,
-            icon: "/assets/marker-star-3.png"
+            icon: "/marker-star-3.png"
         });
         // console.log("LatLng of Nearby: " + pos);
         myLat = position.coords.latitude;
@@ -148,7 +148,7 @@ function rad(x) {return x*Math.PI/180;}
             map: map,
             // scrollwheel: false,
             position: results[0].geometry.location,
-            icon: "/assets/marker-star-3.png"
+            icon: "/marker-star-3.png"
         });
         //console.log("Other than Nearby LatLng: " + results[0].geometry.location);
         myLat = results[0].geometry.location.lat();
