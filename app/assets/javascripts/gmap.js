@@ -18,7 +18,7 @@ function rad(x) {return x*Math.PI/180;}
   var showBars = function() {
     var $barList = $('.bar-list');
     var options = {
-      url: 'http://localhost:3000/api/bars',
+      url: '/api/bars',
       type: 'GET',
       dataType: 'json'
     };
