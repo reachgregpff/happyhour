@@ -110,6 +110,25 @@ h3 {
 }
 
 #bar-thumbnail{
+	position: relative;
 	width: 30%;
 	display:inline-block;
+}
+
+.star{
+
+float:left;
+position: absolute;
+top: 0;
+left: 0;
+color:#9D9292;
+font-size: 3em;
+cursor: pointer;
+transition: .3s;
+margin-top: 0
+
+}
+
+.star:hover{
+color: #DD0066;
 }
