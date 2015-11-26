@@ -132,3 +132,7 @@ margin-top: 0
 .star:hover{
 color: #DD0066;
 }
+
+.clicked {
+	color: #DD0066;
+}

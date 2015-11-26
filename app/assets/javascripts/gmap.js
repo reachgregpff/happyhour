@@ -60,11 +60,19 @@ function rad(x) {return x*Math.PI/180;}
         (function() {
 
           var compiled = _.template( $('#bar-box-template').html() );
+
+          
+
           sort_order = distances[i][1];  // Fetch the id field of each pair in distances
+          if (data[sort_order].starred){
+            var abc = 'clicked'
+          } else {
+            var abc = '';
+          }
           // console.log("THIS IS THE SORT ORDER: " + sort_order);
           var html = compiled( {id: data[sort_order].id, name: data[sort_order].name, image_url: data[sort_order].image_url, 
                                 address: data[sort_order].address, website: data[sort_order].website,
-                                offer: data[sort_order].offer, phone: data[sort_order].phone 
+                                offer: data[sort_order].offer, phone: data[sort_order].phone, abc: abc 
                               } );
           $barList.append(html);
           var marker = new google.maps.Marker ({
