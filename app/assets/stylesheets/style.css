@@ -1,7 +1,6 @@
 html, body {
 	width: 100%;
 	/*height: 100%;*/
-/*	background-color: #FFCC33;*/
 	background-color: white;
 }
 
@@ -10,11 +9,14 @@ html, body {
 	top: 25%;
 	left: 25%;
 }
-
 .container {
 	width: 80%;
 	padding: 0;
 	margin-top: 0;
+}
+.bar-list > .bar-box {
+	width: 90%;
+	margin-bottom: 20px;
 }
 .jumbotron {
 /*	padding: 3px;*/
@@ -34,6 +36,8 @@ html, body {
 .info {
 	width: 100%;
 	margin: 0 auto;
+/*	background-color: #FFCC99;*/
+	background-color: linen;
 }
 .detail {
 	width: 48.5%;
@@ -68,7 +72,7 @@ h2 {
 }
 
 h3 {
-	margin-top: 0.5em;
+	margin-top: 0;
 	margin-bottom: .2em;
 	font-weight: bold;
 	font-size: 1.3em;
@@ -101,12 +105,24 @@ h3 {
 #cocktail-tile-image{
 	width:98%;"
 }
-
+.contact_page {
+	width: 90%;
+	display: inline-block;
+}
+.contact-details {
+	width: 50%;
+	margin: 5px;
+}
+.image-large {
+	max-width: 50%;
+}
+#contact_img {
+	overflow: hidden;
+}
 #bar-description{
 	display:inline-block;
 	width: 60%;
 	float: right;
-
 }
 
 #bar-thumbnail{
@@ -116,19 +132,16 @@ h3 {
 }
 
 .star{
-
-float:left;
-position: absolute;
-top: 0;
-left: 0;
-color:#9D9292;
-font-size: 3em;
-cursor: pointer;
-transition: .3s;
-margin-top: 0
-
+	float:left;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color:#9D9292;
+	font-size: 3em;
+	cursor: pointer;
+	transition: .3s;
+	margin-top: 0
 }
-
 .star:hover{
 color: #DD0066;
 }
