@@ -63,7 +63,9 @@ function rad(x) {return x*Math.PI/180;}
           sort_order = distances[i][1];  // Fetch the id field of each pair in distances
           // console.log("THIS IS THE SORT ORDER: " + sort_order);
           var html = compiled( {id: data[sort_order].id, name: data[sort_order].name, image_url: data[sort_order].image_url, 
-                                address: data[sort_order].address, website: data[sort_order].website } );
+                                address: data[sort_order].address, website: data[sort_order].website,
+                                offer: data[sort_order].offer, phone: data[sort_order].phone 
+                              } );
           $barList.append(html);
           var marker = new google.maps.Marker ({
             position: {lat: data[sort_order].latitude, lng: data[sort_order].longitude},

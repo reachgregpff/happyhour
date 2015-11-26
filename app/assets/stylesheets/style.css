@@ -101,3 +101,15 @@ h3 {
 #cocktail-tile-image{
 	width:98%;"
 }
+
+#bar-description{
+	display:inline-block;
+	width: 60%;
+	float: right;
+
+}
+
+#bar-thumbnail{
+	width: 30%;
+	display:inline-block;
+}
