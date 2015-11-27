@@ -15,4 +15,27 @@ class BarsController < ApplicationController
     @bar = Bar.find(params[:id])
   end
 
+  def new
+    @bar = Bar.new
+  end
+
+  def create
+    
+  end
+
+  def edit
+    
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+  # def bar_params
+  #   params.require(:bar).permit(:name, :address)
+  # end
+
 end
