@@ -7,10 +7,10 @@ function initMap() {
   var map;
   var geocoder = new google.maps.Geocoder();
   var location = $('.location').text().toUpperCase();
-  //ADDED ---- GREG
+  // ADDED ---- GREG
   var myLat = null;
   var myLong = null;
-  //END --- GREG
+  // END --- GREG
 
   function rad(x) {return x*Math.PI/180;}
 
@@ -24,20 +24,20 @@ function initMap() {
     };
 
     $.ajax(options).done(function(data) {
-      //first we get the lat and lng from the address, 
-      //since the ajax above is unsynchronous, we are assuming by now the lat and long for current position will be fetched
+      // first we get the lat and lng from the address, 
+      // since the ajax above is unsynchronous, we are assuming by now the lat and long for current position will be fetched
       
-      //ADDED ---- GREG
+      // ADDED ---- GREG
 
-      console.log("LAT " + myLat + "LONG " + myLong );
+      // console.log("LAT " + myLat + "LONG " + myLong );
 
       var R = 6371; // radius of earth in km
       var distances = [];
       var id = 0;
 
       _.each(data, function(bar) {
-        //find the distance for each bar from my location
-        //var distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(myLat, myLong), new google.maps.LatLng(bar.latitude, bar.longitude));
+        // find the distance for each bar from my location
+        // var distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(myLat, myLong), new google.maps.LatLng(bar.latitude, bar.longitude));
         var dLat  = rad(bar.latitude - myLat);
         var dLong = rad(bar.longitude - myLong);
         var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
