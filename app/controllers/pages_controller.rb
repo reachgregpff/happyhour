@@ -15,7 +15,9 @@ class PagesController < ApplicationController
   end
 
   def listing
-  	
+  	if current_user.access_level != 3
+  		redirect_to '/'
+  	end
   end
 
 
