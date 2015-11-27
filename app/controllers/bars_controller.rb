@@ -11,9 +11,6 @@ class BarsController < ApplicationController
     @day = params[:day]
   end
 
-  def list
-  end
-
   def show
     @bar = Bar.find(params[:id])
   end

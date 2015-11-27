@@ -14,5 +14,9 @@ class PagesController < ApplicationController
 
   end
 
+  def listing
+  	
+  end
+
 
 end

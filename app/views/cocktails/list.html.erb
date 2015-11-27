@@ -55,24 +55,23 @@
 <div class="container">
     <div class="row">
 
-<% for i in ((@page-1)*100)..((@page-1)*100+99)%>
+      <% for i in ((@page-1)*100)..((@page-1)*100+99)%>
 
-    <a href="/cocktails/show/<%=@cocktails[i].cocktail_id%>">
-      <div style="background-color: linen" id="cocktail-tile" class="col-md-2">
-        <h5><%=@cocktails[i].name%></h5>
+          <a href="/cocktails/show/<%=@cocktails[i].cocktail_id%>">
+            <div style="background-color: linen" id="cocktail-tile" class="col-md-2">
+              <h5><%=@cocktails[i].name%></h5>
 
-        <% if @cocktails[i].image_url != "Image Not Available" %>
-          <img src=<%=@cocktails[i].image_url%> alt=""></img>
-        <% else %>
-          <img id="cocktail-tile-image" src="/Cocktailani.gif" alt="Cocktail"></img>
-        <% end %>
+              <% if @cocktails[i].image_url != "Image Not Available" %>
+                <img src=<%=@cocktails[i].image_url%> alt=""></img>
+              <% else %>
+                <img id="cocktail-tile-image" src="/Cocktailani.gif" alt="Cocktail"></img>
+              <% end %>
 
         <p class="cocktail-text"><%=@cocktails[i].ingredients%></p>
       </div>
     </a>
 
-
-<% end %>
+      <% end %>
 
   </div>
 </div>
