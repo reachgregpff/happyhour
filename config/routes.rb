@@ -24,6 +24,10 @@ Rails.application.routes.draw do
   #clicking on a coktail in a cocktail list
   get '/cocktails/show/:cocktail_id'    =>   'cocktails#show'
 
+  get '/bars/list/:page'    => 'bars#list'
+
+  get '/bars/search'    => 'bars#search'
+
   #display bars
   resources :bars
 

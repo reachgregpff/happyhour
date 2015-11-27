@@ -1,0 +1,112 @@
+
+<%  count = 0 
+    @page = @page.to_i
+%>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h6 style="font-weight: bold">Total bars: <%=@bars.count%></h6>
+        <h5>Bars <%=(@page-1)*10+1%> to <%=(@page-1)*10+10%>...</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div data-total="<%=@bars.count%>" id="number-scroll" class="col-md-12">
+      <center>
+        <a href="/bars/list/1">
+          <button data-end="01" id="last-button" class="number-button">Page 01</button>
+        </a>
+        <% if @page == 1%>
+          <button data-start="1" id="prev-button"  class="number-button" disabled><<</button>
+        <% else %>
+          <a href="/bars/list/<%=@page-1%>">
+            <button data-start="1" id="prev-button"  class="number-button"><<</button>
+          </a>
+        <% end %>
+        <% if @page == (@bars.count/10)%>
+          <button  data-end="100" id="next-button" class="number-button" disabled>>></button>
+        <% else %>
+          <a href="/bars/list/<%=@page+1%>">
+            <button data-end="100" id="next-button" class="number-button">>></button>
+          </a>
+        <% end %>
+        <a href="/bars/list/<%=@bars.count/10%>">
+          <button data-end="<%=@bars.count/10%>" id="last-button" class="number-button">Page <%=@bars.count/10%></button> 
+        </a>    
+      </center>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+
+<% for i in ((@page-1)*10)..((@page-1)*10+9)%>
+
+    <a href="/bars/<%=@bars[i].id%>">
+      <div style="background-color: linen" id="cocktail-tile" class="col-md-2">
+        <h5><%=@bars[i].name%></h5>
+
+        <% if @bars[i].image_url != "Image Not Available" %>
+          <img id="bar-tile-image" src=<%=@bars[i].image_url%> alt=""></img>
+        <% else %>
+          <img id="bar-tile-image" src="/Cocktailani.gif" alt="Cocktail"></img>
+        <% end %>
+
+        <p style="font-size: 12px"><%=@bars[i].address%></p>
+      </div>
+    </a>
+
+
+<% end %>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div data-total="<%=@bars.count%>" id="number-scroll" class="col-md-12">
+      <center>
+        <a href="/bars/list/1">
+          <button data-end="01" id="last-button" class="number-button">Page 01</button>
+        </a>
+        <% if @page == 1%>
+          <button data-start="1" id="prev-button"  class="number-button" disabled><<</button>
+        <% else %>
+          <a href="/bars/list/<%=@page-1%>">
+            <button data-start="1" id="prev-button"  class="number-button"><<</button>
+          </a>
+        <% end %>
+        <% if @page == (@bars.count/10)%>
+          <button  data-end="100" id="next-button" class="number-button" disabled>>></button>
+        <% else %>
+          <a href="/bars/list/<%=@page+1%>">
+            <button data-end="100" id="next-button" class="number-button">>></button>
+          </a>
+        <% end %>
+        <a href="/bars/list/<%=@bars.count/10%>">
+          <button data-end="<%=@bars.count/10%>" id="last-button" class="number-button">Page <%=@bars.count/10%></button> 
+        </a>    
+      </center>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

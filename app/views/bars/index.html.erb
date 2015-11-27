@@ -1,37 +1,40 @@
 <section class="info">
-	<div class="detail">
-		<div class="bar-list">
-			<p>Your location:</p>
-			<p class="location"><%= @location %></p>
+  <div class="detail">
+    <div class="bar-list">
+      <p>Your location: <span class="location"><%= @location %></span></p>
+      <!-- <p class="location"><%#= @location %></p> -->
+      <p style="font-weight:bold" >The top 10 closest happy hour deals around your location:</p>
 
-		</div>
-	</div>
+    </div>
+  </div>
 
-	<div class="map">
-		
-	</div>
+  <div class="map">
+    
+  </div>
 </section>
 
  <script id="bar-box-template" type="text/x-underscore-template">
     
- 	<div class="container bar-box">
+  <div class="container bar-box">
     <div class="row">
-    	  <div id="bar-description">
-		      <header class="content">
-		        <a href="/bars/{{ id }}"><h3>{{ name }}</h3></a>
-		      </header>
-		      <p> {{ address }}</p>
-		      <p>Tel: {{ phone }}</p>
-		      <p>Offer: {{ offer }}</p>
-		      <a href={{ website}}> more... </a>
-		    </div>
-		    <div id="bar-thumbnail">
-	      	<a href="/bars/{{ id }}"><img src ={{ image_url }}></a>
+        <div id="bar-description">
+          
+          <header class="content">
+            <a href="/bars/{{ id }}"><h3>{{ name }}</h3></a>
+          </header>
+          <p> {{ address }}</p>
+          <p>Tel: {{ phone }}</p>
+          <p>Offer: {{ offer }}</p>
+          <a href={{ website}}> more... </a>
+        </div>
+        <div id="bar-thumbnail">
+          <a href="/bars/{{ id }}"><img src ={{ image_url }}></a>
 
-		    <p class="star {{abc}}">&#9733</p>
+        <p class="star {{abc}}">&#9733</p>
+        <img id='image-number' src={{image_number}}>
 
-	      </div>
-	
+        </div>
+  
     </div>
   </div>
       
@@ -39,4 +42,13 @@
 
 <script>
  $('document').ready(initMap());
+
+ $('.star').on('click', function(){
+
+  
+  
+
+ });
+
+
 </script>

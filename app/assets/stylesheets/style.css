@@ -105,6 +105,11 @@ h3 {
 #cocktail-tile-image{
 	width:98%;
 }
+
+#bar-tile-image{
+	width:88%;
+}
+
 .contact_page {
 	width: 90%;
 	display: inline-block;
@@ -142,10 +147,24 @@ h3 {
 	transition: .3s;
 	margin-top: 0
 }
+
+#un-clicked{
+	color:#9D9292;
+}
+
 .star:hover{
 color: #DD0066;
 }
 
 .clicked {
 	color: #DD0066;
+}
+
+#image-number{
+	width:30%;
+	display: inline-block;
+	float: right;
+	top:-5%;
+	right: -30%;
+	position: absolute;
 }
