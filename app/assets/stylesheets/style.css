@@ -3,7 +3,9 @@ html, body {
 	/*height: 100%;*/
 	background-color: white;
 }
-
+body {
+	font-size: 1.3em;
+}
 #search-form {
 	position: absolute;
 	top: 25%;
@@ -65,17 +67,19 @@ p {
 	margin-left: 0;
 	font-size: 1em;
 }
-
 h2 {
 	margin-top: 0;
 	font-size: 2.5em;
 }
-
 h3 {
 	margin-top: 0;
 	margin-bottom: .2em;
 	font-weight: bold;
 	font-size: 1.3em;
+}
+h4 {
+	font-size: 1.1em;
+	line-height: 1.3;
 }
 .detail {
 		margin: 0 0 0 4px;
@@ -106,23 +110,32 @@ h3 {
 	width:98%;
 }
 .contact_page {
-	width: 90%;
-	display: inline-block;
+	width:100%;
 }
 .contact-details {
-	width: 50%;
-	margin: 5px;
+	border-top: 1em solid white;
+	border-left: 1em solid white;
+	padding-right: 3%;
+	vertical-align: top;
+	width: 40%;
+	display: inline-block;
 }
 .image-large {
-	max-width: 50%;
-}
-#contact_img {
+	display: inline;
+/*	max-width: 59%;*/
 	overflow: hidden;
 }
+#contact_img {
+	max-width: 58%;
+/*	overflow: hidden;
+*/}
 #bar-description{
 	display:inline-block;
 	width: 60%;
 	float: right;
+}
+.cocktail-text {
+	font-size: 0.8em;
 }
 
 #bar-thumbnail{
@@ -145,7 +158,7 @@ h3 {
 .star:hover{
 color: #DD0066;
 }
-
-.clicked {
+/*make star pink stay on click -- not working*/
+.star:clicked {
 	color: #DD0066;
 }

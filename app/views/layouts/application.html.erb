@@ -6,6 +6,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjg9bIT14JyvtW7I5lHcLWjJF8F140sV8"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
   </head>
   <body>
     <nav class="navbar navbar-default" role="navigation">
@@ -17,10 +18,10 @@
 
           </a>
           <ul class="nav navbar-nav navbar-right ">
-            <li class="active"><a href="/">HappyHourBars</a></li>
-            <li><a href="/cocktails/1">HappyHour@Home</a></li>
-            <li><a href="#">Favourites</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li class="<%= request.path == '/' ? 'active' : '' %>"><a href="/">HappyHourBars</a></li>
+            <li class="<%= request.path == '/cocktails/1' ? 'active' : '' %>"><a href="/cocktails/1">HappyHour@Home</a></li>
+<!--             <li><a href="#">Favourites</a></li> -->
+            <li class="<%= request.path == '/contact' ? 'active' : '' %>"><a href="/contact">Contact</a></li>
             <%if logged_in? == false%>
             <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Login</a></li>
             <%else%>
