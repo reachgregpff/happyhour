@@ -26,8 +26,32 @@ class BarsController < ApplicationController
   def search
     @name = params[:name]
     #@bar = Bar.where(“NAME :LIKE #{@name}")
-    @bar = Bar.where("NAME LIKE ?", "%#{@name}%")
+    #@bar = Bar.where("NAME LIKE ?", "%#{@name}%")
     #where("bar LIKE ?", "%#{query}%")
   end
 
+  def new
+    @bar = Bar.new
+  end
+
+  def create
+    
+  end
+
+  def edit
+    
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+  # def bar_params
+  #   params.require(:bar).permit(:name, :address)
+  # end
+
+>>>>>>> f22ce077851560b4257fc42360d31150c497de5c
 end

@@ -17,14 +17,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#Clear Barfave Table
+# Clear Barfave Table
 User.delete_all
 
+User.create(name: 'dt', email: 'd@t.com', password: 'cakepudding', address:'30 William St', access_level: 1);     
 User.create(name: 'admin', email: 'admin@admin.com', password: 'password', address:'45 William St', access_level: 2);      
 User.create(name: 'gitlord', email: 'git@lord.com', password: 'lordgit', address:'46 William St', access_level: 3);
-User.create(name: 'dt', email: 'd@t.com', password: 'cakepudding', address:'30 William St', access_level: 1);     
 
-#Clear Drinkfave Table
+# Clear Drinkfave Table
 Drinkfave.delete_all
 
 Drinkfave.create(user_id: 1, cocktail_id: 1);
@@ -35,7 +35,7 @@ Drinkfave.create(user_id: 2, cocktail_id: 3);
 Drinkfave.create(user_id: 3, cocktail_id: 3);
 
 
-#Clear Barfave Table
+# Clear Barfave Table
 Barfave.delete_all
 
 Barfave.create(user_id: 1, bar_id: 1);
@@ -45,10 +45,11 @@ Barfave.create(user_id: 1, bar_id: 2);
 Barfave.create(user_id: 2, bar_id: 3);
 Barfave.create(user_id: 3, bar_id: 3);
 
-#Clear Bar Table
+# Clear Bar Table
 Bar.delete_all
 
-#Bar records
+# Bar records
+# Melbourne Bars
 Bar.create(name: 'Mr Mason', address: 'Shop 10, 530 Collins Street, Melbourne', image_url: 'https://lh4.googleusercontent.com/-EC4_wDmGc84/UwaHneIyQ9I/AAAAAAAAACY/0seWJ-7U_Qw/s160-k-no/', latitude: -37.818132, longitude: 144.956973, offer: 'What: $5 pints of beer, house wine & basic spirits, When: Monday - Thursday, Time: 5pm–7pm', website: 'http://www.mrmason.com.au', phone: '(03) 9614 4500',user_id: 1);
 Bar.create(name: 'Campari House', address: '23-25 Hardware Lane, Melbourne', image_url: '/campari-roof.jpg', latitude: -37.814070, longitude: 144.961467, offer: 'What: $10 cocktails, When: Monday - Tuesday, Time: 4pm–7pm', website: 'http://www.camparihouse.com.au', phone: '(03) 9600 1574',user_id: 3);
 Bar.create(name: 'DuNord', address: '367 Lt Bourke Street, Melbourne', image_url: '/Du-Nord.jpg', latitude: -37.813576, longitude: 144.961870, offer: 'What: $12 market cocktail & $6.50 mystery beer, When: Monday - Saturday, Time: 4pm–10pm', website: 'http://dunord.com.au', phone: '(03) 9642 0052',user_id: 3);
@@ -62,7 +63,7 @@ Bar.create(name: 'Elephant and Wheelbarrow', address: '94-96 Bourke Street, Melb
 Bar.create(name: 'Blue Moon Bar', address: '380 Russell Street, Melbourne', image_url: '/blue-moon-bar.jpg', latitude: -37.807497, longitude: 144.965912, offer: 'What: 50% off drinks, When: Mondays and Thursdays, Time: all night', website: 'http://www.facebook.com/BlueMoonBarMelbourne', phone: '(03) 9639 5875',user_id: 1);
 Bar.create(name: 'Amber Lounge', address: '388 Lonsdale Street, Melbourne', image_url: '/amber-lounge.jpg', latitude: -37.812513, longitude: 144.960919, offer: 'What: $3 wine (including house sparkling), 2-for-1 cocktails, $5 spirits and Coronas, When: Fridays, Time: 5.30pm–8.30pm', website: 'http://www.amberlounge.net.au', phone: '(03) 9639 5875',user_id: 1);
 Bar.create(name: 'European Bier Café', address: '120 Exhibition Street, Melbourne', image_url: '/european.jpg', latitude: -37.812916, longitude: 144.971255, offer: 'What: Half price tap beer, When: Mondays, Time: after 5pm, What: Two beers for one, When: Thursdays, Time: after 6pm', website: 'http://www.europeanbiercafe', phone: '(03) 9663 1222',user_id: 3);
-#Bars Sydney
+# Sydney Bars
 Bar.create(name: 'Helm Bar', address: 'Wheat Road, Aquarium Wharf, Sydney, NSW, 2000', image_url: '/Syd-Helm.png', latitude: -33.870473, longitude: 151.202706, offer: 'What: $13 Jugs and $25 kilo of fresh chilled prawns, Time: 12pm to 9pm,  When: Saturday, Sunday', website: 'http://www.helmbar.com.au/', phone: '02 9290 1571',user_id: 1);
 Bar.create(name: 'Edinburgh Castle', address: '294 Pitt St, Sydney, NSW, 2000', image_url: '/Syd-Edinburg.jpeg', latitude: -33.874686, longitude: 151.208204, offer: 'What: $9 Cocktails 5-7pm, Time: 5pm to 7pm,  When: Monday, Tuesday, Wednesday, Thursday, Friday', website: 'http://wwww.edinburghcastlehotel.com.au', phone: '9264 8616',user_id: 1);
 Bar.create(name: 'ScuBar', address: '4 Rawson Place, Sydney, NSW, 2000', image_url: '/Syd-Scubar.jpg', latitude: -33.8816384, longitude: 151.2031187, offer: '$5 Top Shelf Spirits, Beer & Cider 3-11pm on Thursday, $10 Jugs of Beer 3pm-Midnight on Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, $7.50 Jugs of Beer & Snakebite 6-9pm on Monday, $3.50 beers, $5 House Spirits 5-9pm on Wednesday, $5 Skittle Vodkas 3pm-Midnight on Saturday', website: 'http://www.scubar.com.au/', phone: '(02) 9212 4244',user_id: 1);
@@ -82,10 +83,10 @@ Bar.create(name: "St James Hotel", address: '114 Castlereagh Street', image_url:
 Bar.create(name: "Martin Place Bar", address: '122 Pitt Street, Sydney, NSW, 2000', image_url: '/Syd-Martins.jpeg', latitude: -33.868027,  longitude: 151.210294, offer: '$5 Heinekens, House Spirits & Wine, $10 Cocktails 5-7pm on Monday, Tuesday, Wednesday, Thursday, Friday', website: 'www.martinplacebar.com.au', phone: '(02) 9235 3999',user_id: 1);
 
 
-#Clear Cocktail Table
+# Clear Cocktail Table
 Cocktail.delete_all
 
-#Cocktail Records 0 to 100
+# Cocktail Records 0 to 100
 Cocktail.create(cocktail_id: "Blood-_-Sand-Cocktail-1376432", name: "Blood & Sand Cocktail", image_url: "https://lh3.googleusercontent.com/93bqB-_g4hJUK6vTnWUzadHvfe1BWub2xGByaJ-44MgzImCy3fepaHEhMjioErOI5Vu3xWeYmKFPF0xt10wV0A=s90-c", time: 300, ingredients: "scotch, liqueur, sweet vermouth, fresh orange juice, orange segments, cocktail cherries")
 Cocktail.create(cocktail_id: "The-Aviation-Cocktail-1370423", name: "The Aviation Cocktail", image_url: "https://lh3.googleusercontent.com/Gx2ph7XhPQ0GS-3mfY8sVGMlg-7hSxy5-L0fRchOlOndOcySfTuvAcH9vMzy4I59bw7c4z3ufR2HvKGeeDSg=s90-c", time: 600, ingredients: "gin, maraschino liqueur, crème de violette, lemon juice")
 Cocktail.create(cocktail_id: "Orange-Pomegranate-Gin-Cocktail-1380652", name: "Orange Pomegranate Gin Cocktail", image_url: "https://lh3.googleusercontent.com/tmwh4gBGreRyBTqSzcaihT-4qaPyNflb2th6d3QQncj_B-ruWYEjrI331vIxNgpyIelqbcX8Us4zqMjMUgBlYQ=s90-c", time: 900, ingredients: "ice cubes, Citadelle Gin, orange juice, pomegranate liqueur, prosecco, orange segments, pomegranate seeds")

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   #get request to '/' code is in pags controller home method / action
   get '/' => 'pages#home'
   get '/contact' => 'pages#contact',  as: :contact    #if client person wants info instead of about in the url
-  
+  get '/listing' => 'pages#listing', as: :listing
+
   #showing the logging form
   get '/login' => 'session#new'
 
