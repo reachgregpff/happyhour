@@ -79,7 +79,7 @@ function initMap() {
 
           // image of marker
           var image = {
-            url: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + counter + '|00FF00|000000',
+            url: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + counter + '|FF9900|000000',
             size: new google.maps.Size(42, 68),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 32)
