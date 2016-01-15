@@ -1,18 +1,18 @@
-
-<h1><%= @bar.name %></h1>
-  <p class="star">&#9733</p>
-  <p class="address"><%= @bar.address%></p>
-  <img class="img_url" src="<%=@bar.image_url%>" alt="">
-  <p class="offer"><%= @bar.offer%></p>
-  <p class="phone">Phone No: <%= @bar.phone%></p>
-  <a href="<%=@bar.website%>"><p><%=@bar.website%></p></a>
-  
-<input id="longitude" type="hidden" value="<%=@bar.longitude%>">
-<input id="latitude" type="hidden" value="<%=@bar.latitude%>">
-<input id="name" type="hidden" value="<%=@bar.name%>">
-<div class="map">
+<div class="wrapper">
+  <h1><%= @bar.name %></h1>
+    <p class="star">&#9733</p>
+    <p class="address"><%= @bar.address%></p>
+    <img class="img_url" src="<%=@bar.image_url%>" alt="">
+    <p class="offer"><%= @bar.offer%></p>
+    <p class="phone">Phone No: <%= @bar.phone%></p>
+    <a href="<%=@bar.website%>"><p><%=@bar.website%></p></a>
     
+  <input id="longitude" type="hidden" value="<%=@bar.longitude%>">
+  <input id="latitude" type="hidden" value="<%=@bar.latitude%>">
+  <input id="name" type="hidden" value="<%=@bar.name%>">
+  <div class="map">
   </div> 
+</div>
    <script> 
 $('document').ready(function(){
     var map = new google.maps.Map($('.map')[0], {

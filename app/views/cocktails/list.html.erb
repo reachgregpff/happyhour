@@ -58,7 +58,7 @@
       <% for i in ((@page-1)*100)..((@page-1)*100+99)%>
 
           <a href="/cocktails/show/<%=@cocktails[i].cocktail_id%>">
-            <div style="background-color: linen" id="cocktail-tile" class="col-md-2">
+            <div style="background-color: linen" id="tile" class="col-md-2">
               <h5><%=@cocktails[i].name%></h5>
 
               <% if @cocktails[i].image_url != "Image Not Available" %>

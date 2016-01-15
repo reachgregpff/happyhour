@@ -61,10 +61,10 @@
     <div id="search-form" class="container-fluid text-center" >
 
       <%= form_tag '/bars', method: 'GET' do %>
-        <input class="address" type="text" placeholder="my current location" name="address">
-        <input class="postcode" type="text" placeholder="postcode" name="postcode">
+        <input class="address" type="text" placeholder="Where are you now?" name="address">
+        <input class="postcode" type="text" placeholder="And area postcode?" name="postcode">
         <!-- <input class="day" type="text" placeholder="day" name="day"> -->
-        <button id="search-btn">Search</button>
+        <button id="search-btn" class="btn btn-default">Search</button>
       <% end %>
 
     </div> <!--  END OF SEARCH FORM  -->
