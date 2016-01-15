@@ -2,6 +2,8 @@
 <%  count = 0 
     @page = @page.to_i%>
 
+<br><br><br>
+
 <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -81,7 +83,7 @@
     <div data-total="<%=@cocktails.count%>" id="number-scroll" class="col-md-12">
       <center>
         <a href="/cocktails/1">
-          <button data-end="01" id="last-button" class="btn-default btn-xs">Page 01</button>
+          <button data-end="01" id="last-button" class="btn btn-default btn-xs">Page 01</button>
         </a>
         <% if @page == 1%>
           <button data-start="1" id="prev-button"  class="btn btn-default btn-xs" disabled><<</button>
